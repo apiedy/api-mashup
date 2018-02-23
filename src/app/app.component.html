@@ -1,20 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="appTitle">
+  <h2 class="title">
+    Weather & Directions
+  </h2>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="search">
+  <input #autocomplete placeholder="Enter your address" (focus)="setGeoBias()" type="text" />
+</div>
+
+<div class="weather row">
+  <div class="col-sm-6 myCols">
+    <div class="initialdata">
+      <div class="header">
+        <div class="place" >{{ city + ", " + state }}</div>
+        <div class="climateIcon" >
+          <img src="{{initWeather.icon_url}}" alt="Weather Icon">
+        </div>
+      </div>
+      <div class="field climate">
+        <div class="label">Weather</div>
+        <div class="data">{{ initWeather.weather }}</div>
+      </div>
+      <div class="field temp">
+        <div class="label">Temperature</div>
+        <div class="data">{{ initWeather.temperature_string }}</div>
+      </div>
+      <div class="field wind">
+        <div class="label">Wind</div>
+        <div class="data">{{ initWeather.wind_string }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 myCols">
+    <div class="destinationData" *ngIf="place">
+      <app-destination-weather [destinationData]="place" (destination)="onDestination($event)" ></app-destination-weather>
+    </div>
+  </div>
+</div>
+
+<div class="directions">
+  <div class="col-sm-12 myCols">
+    <app-directions *ngIf="directions" [directionsData]="directions" ></app-directions>
+  </div>
+</div>

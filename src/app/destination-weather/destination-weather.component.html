@@ -1,0 +1,29 @@
+<div *ngIf="weather">
+    <div class="header">
+        <div class="place">{{ city + ", " + state }}</div>
+        <div class="climateIcon">
+            <img src="{{weather.icon_url}}" alt="Weather Icon">
+        </div>
+    </div>
+    <div class="field climate">
+        <div class="label">Weather</div>
+        <div class="data">{{ weather.weather }}</div>
+    </div>
+    <div class="field temp">
+        <div class="label">Temperature</div>
+        <div class="data">{{ weather.temperature_string }}</div>
+    </div>
+    <div class="field wind">
+        <div class="label">Wind</div>
+        <div class="data">{{ weather.wind_string }}</div>
+    </div>
+</div>
+
+<div *ngIf="weather === undefined">
+    <div class="header">
+        <div class="place">{{city + ", " + state}}</div>
+    </div>
+    <div>
+        Too many cities with that name try a different one.
+    </div>
+</div>

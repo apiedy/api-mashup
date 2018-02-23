@@ -1,0 +1,79 @@
+.appTitle {
+    text-align: center;
+}
+
+.search {
+    margin: 15px;
+    margin-bottom: 0px;
+}
+
+.search input {
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    padding: 8px;
+    border: 0px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+}
+
+.search input:focus {
+    outline: 0;
+}
+
+.myCols {
+    padding: 0px;
+    padding-right: 15px;
+}
+
+.myCols:last-child {
+    padding: 0px;
+}
+
+.weather,
+.directions {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.weather .initialdata,
+.weather .destinationData {
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+    border-radius: 2px;
+    padding: 15px;
+}
+
+.weather .initialdata .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #EDEDED;
+    margin-bottom: 8px;
+    padding-bottom: 5px; 
+}
+
+.weather .initialdata .header .place {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.weather .initialdata .field {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2px 0;
+}
+
+.weather .initialdata .label,
+.weather .initialdata .data {
+    font-family: "Open sans";
+    font-size: 18px;
+}
+
+.weather .initialdata .label {
+    font-weight: bold;
+    width: 40%;
+}

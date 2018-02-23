@@ -1,0 +1,21 @@
+<div class="destinationData">
+  <div class="header">
+    <div class="heading">Directions</div>
+    <div class="routeNumber">{{ routes.length }} routes available</div>
+  </div>
+  <div *ngFor="let r of routes" class="route">
+    <div class="field summary">
+      <div class="label">Summary</div>
+      <div class="data">{{ r.summary }}</div>
+    </div>
+    <div class="field distance">
+      <div class="label">Distance</div>
+      <div class="data">{{ r.legs[0].distance.text }}</div>
+    </div>
+    <div class="field duration">
+      <div class="label">Duration</div>
+      <div class="data">{{ r.legs[0].duration.text }}</div>
+    </div>
+  </div>
+</div>
+  
